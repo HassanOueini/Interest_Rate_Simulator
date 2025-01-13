@@ -9,9 +9,9 @@ To customize the simulations, adjust the following parameters in the code:
 
 - **`r0`**: Initial short rate (e.g., `0.03` for 3%).
   - Represents the starting point of the interest rate.
-- **`theta`** (CIR): Long-term mean reversion level.
+- **`theta`**: Long-term mean reversion level.
   - Determines the equilibrium level to which rates revert.
-- **`kappa`** (CIR): Speed of mean reversion.
+- **`kappa`**: Speed of mean reversion.
   - Controls how quickly rates revert to the mean.
 - **`sigma`**: Volatility of the interest rate.
   - Governs the magnitude of rate fluctuations.
@@ -29,35 +29,32 @@ These parameters can be adjusted in each simulator file or the test script.
 ## The Math Behind It
 
 ### 1. Vasicek Model:
-The Vasicek model is described by the stochastic differential equation (SDE): $$dr_t = \kappa (\theta - r_t) dt + \sigma dW_t$$
+The Vasicek model is described by the stochastic differential equation (SDE): 
+$$dr_t = \kappa (\theta - r_t) dt + \sigma dW_t$$
 - **Parameters**:
   - \( $\kappa$ \): Speed of mean reversion.
   - \( $\theta$ \): Long-term mean level.
   - \( $\sigma$ \): Volatility of the interest rate.
   - \( $dW_t$ \): Wiener process (Brownian motion).
-- **Key Feature**: Rates revert to \( b \) over time at a speed determined by \( a \).
+- **Key Feature**: Rates revert to $\theta$ over time at a speed determined by $\kappa$.
 
 ### 2. Cox-Ingersoll-Ross (CIR) Model:
 The CIR model modifies the Vasicek model to ensure non-negative rates:
-$$
-dr_t = \kappa (\theta - r_t) dt + \sigma \sqrt{r_t} dW_t
-$$
+$$dr_t = \kappa (\theta - r_t) dt + \sigma \sqrt{r_t} dW_t$$
 - **Parameters**:
-  - \( \kappa \): Speed of mean reversion.
-  - \( \theta \): Long-term mean level.
-  - \( \sigma \): Volatility, scaled by \( \sqrt{r_t} \).
-  - \( dW_t \): Wiener process.
-- **Key Feature**: Ensures that \( r_t \geq 0 \) under specific parameter constraints.
+  - \( $\kappa$ \): Speed of mean reversion.
+  - \( $\theta$ \): Long-term mean level.
+  - \( $\sigma$ \): Volatility, scaled by \( \sqrt{r_t} \).
+  - \( $dW_t$ \): Wiener process.
+- **Key Feature**: Ensures that non-negative interest rates, while still incorporating mean-reverting behavior.
 
 ### 3. Lognormal (Geometric Brownian Motion) Model:
 This model assumes interest rates follow a geometric Brownian motion:
-$$
-dr_t = \mu r_t dt + \sigma r_t dW_t
-$$
+$$dr_t = \mu r_t dt + \sigma r_t dW_t$$
 - **Parameters**:
-  - \( \mu \): Drift rate (expected growth).
-  - \( \sigma \): Volatility.
-  - \( dW_t \): Wiener process.
+  - \( $\mu$ \): Drift rate (expected growth).
+  - \( $\sigma$ \): Volatility.
+  - \( $dW_t$ \): Wiener process.
 - **Key Feature**: Rates grow proportionally to their current value, making the model suitable for modeling exponentially growing quantities.
 
 ## Outputs
@@ -72,7 +69,7 @@ Each model produces the following outputs:
 
 ### Test Script Output
 The test script runs all three models and visualizes them in separate plots for comparison. By analyzing the outputs, you can observe how each model behaves under the same parameters:
-- **Vasicek Model**: Displays mean-reverting behavior with paths oscillating around the long-term mean \( b \).
-- **CIR Model**: Similar to Vasicek but ensures non-negative rates, with paths tending to revert to \( \theta \).
+- **Vasicek Model**: Displays mean-reverting behavior with paths oscillating around the long-term mean \( $\theta$ \).
+- **CIR Model**: Similar to Vasicek but ensures non-negative rates, with paths tending to revert to \( $\theta$ \).
 - **Lognormal Model**: Displays exponential growth with volatility proportional to the current rate, leading to wider path divergence over time.
 
