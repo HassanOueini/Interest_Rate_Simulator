@@ -31,11 +31,11 @@ These parameters can be adjusted in each simulator file or the test script.
 ### 1. Vasicek Model:
 The Vasicek model is described by the stochastic differential equation (SDE):
 $$
-    dr_t = a (b - r_t) dt + \sigma dW_t
+dr_t = \kappa (\theta - r_t) dt + \sigma dW_t
 $$
 - **Parameters**:
-  - \( a \): Speed of mean reversion.
-  - \( b \): Long-term mean level.
+  - \( kappa \): Speed of mean reversion.
+  - \( theta \): Long-term mean level.
   - \( \sigma \): Volatility of the interest rate.
   - \( dW_t \): Wiener process (Brownian motion).
 - **Key Feature**: Rates revert to \( b \) over time at a speed determined by \( a \).
@@ -43,7 +43,7 @@ $$
 ### 2. Cox-Ingersoll-Ross (CIR) Model:
 The CIR model modifies the Vasicek model to ensure non-negative rates:
 $$
-    dr_t = \kappa (\theta - r_t) dt + \sigma \sqrt{r_t} dW_t
+dr_t = \kappa (\theta - r_t) dt + \sigma \sqrt{r_t} dW_t
 $$
 - **Parameters**:
   - \( \kappa \): Speed of mean reversion.
@@ -55,7 +55,7 @@ $$
 ### 3. Lognormal (Geometric Brownian Motion) Model:
 This model assumes interest rates follow a geometric Brownian motion:
 $$
-    dr_t = \mu r_t dt + \sigma r_t dW_t
+dr_t = \mu r_t dt + \sigma r_t dW_t
 $$
 - **Parameters**:
   - \( \mu \): Drift rate (expected growth).
