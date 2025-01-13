@@ -29,10 +29,7 @@ These parameters can be adjusted in each simulator file or the test script.
 ## The Math Behind It
 
 ### 1. Vasicek Model:
-The Vasicek model is described by the stochastic differential equation (SDE):
-$$
-dr_t = \kappa (\theta - r_t) dt + \sigma dW_t
-$$
+The Vasicek model is described by the stochastic differential equation (SDE): $$ dr_t = \kappa (\theta - r_t) dt + \sigma dW_t $$
 - **Parameters**:
   - \( kappa \): Speed of mean reversion.
   - \( theta \): Long-term mean level.
