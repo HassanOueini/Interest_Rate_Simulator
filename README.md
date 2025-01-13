@@ -1,4 +1,4 @@
-# Interest_Rate_Simulator
+.# Interest_Rate_Simulator
 The Interest Rate Simulation Models project provides MATLAB implementations for simulating interest rates using three widely-used stochastic models: the Vasicek model, the Cox-Ingersoll-Ross (CIR) model, and the Lognormal (Geometric Brownian Motion) model. These models are crucial for understanding the dynamics of interest rates, pricing fixed-income derivatives, and managing interest rate risk. Additionally, a test file is included to run and compare all three models together.
 
 ## What It Does
@@ -44,7 +44,7 @@ $$dr_t = \kappa (\theta - r_t) dt + \sigma \sqrt{r_t} dW_t$$
 - **Parameters**:
   - \( $\kappa$ \): Speed of mean reversion.
   - \( $\theta$ \): Long-term mean level.
-  - \( $\sigma$ \): Volatility, scaled by \( \sqrt{r_t} \).
+  - \( $\sigma$ \): Volatility, scaled by \( $\sqrt{r_t}$ \).
   - \( $dW_t$ \): Wiener process.
 - **Key Feature**: Ensures that non-negative interest rates, while still incorporating mean-reverting behavior.
 
