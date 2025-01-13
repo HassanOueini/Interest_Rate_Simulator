@@ -1,15 +1,15 @@
 
 function interest_rate_simulation()
-    r0 = 0.04;
+    r0 = 0.03;
     theta = 0.05;
-    sigma = 0.03;
+    sigma = 0.02;
     kappa = 0.1;
     mu_lognormal = 0.03;
     
     % Simulation Settings
-    T = 5; % Time horizon in years
+    T = 1; % Time horizon in years
     N = 100; % Number of time steps
-    M = 1000; % Number of simulation paths
+    M = 500; % Number of simulation paths
     
     % Call functions to simulate each model
     vasicek_simulation(r0, kappa, theta, sigma, T, N, M);
