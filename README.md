@@ -1,5 +1,8 @@
-.# Interest_Rate_Simulator
+# Interest_Rate_Simulator
 The Interest Rate Simulation Models project provides MATLAB implementations for simulating interest rates using three widely-used stochastic models: the Vasicek model, the Cox-Ingersoll-Ross (CIR) model, and the Lognormal (Geometric Brownian Motion) model. These models are crucial for understanding the dynamics of interest rates, pricing fixed-income derivatives, and managing interest rate risk. Additionally, a test file is included to run and compare all three models together.
+
+# Abstract
+Interest rates are a huge factor when it comes to finance. They dictate how much you can borrow as an investor and what the market expects as a return on their investment. Modelling it and finding the future rates is a big factor to see if it's worth investing now or waiting. This project simulates and finds the potential interest rate in the future to help make better decisions. There are many different strategies and models, this code implements a handful of different simulators. Users can plug in their own values for variables and potentiall think of a decision or strategy.
 
 ## What It Does
 This project simulates interest rate paths for the Vasicek, CIR, and Lognormal models and generates visualizations to illustrate their dynamics. Each model computes and plots the analytical mean, simulated mean, and several simulated paths. The test script combines the three models for side-by-side comparison under the same parameter settings.
